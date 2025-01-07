@@ -1,0 +1,1 @@
+Durbin-Watson statistic for autocorrelation: 2.3970245265452776
