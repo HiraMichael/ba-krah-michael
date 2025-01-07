@@ -78,6 +78,14 @@ class TrafoOperatorRole(Role):
         social_utility: np.array
             Vector of social utilities for each agent managing loads/generation, which is used
             for the canon of social utility.
+        scarcity_flag: bool
+            Indicates whether or not a transformer congestion occurred (for storing simulation results only).
+        ultimate_share_of_demand_at_t: np.array
+            Share of demand allocated to each agent at t (for storing simulation results only).
+        loading_percentage_pre_dimming: float
+            Transformer loading percentage prior to fixing the congestion (for storing simulation results only).
+        loading_percentage_post_dimming: float
+            Transformer loading percentage after fixing the congestion (for storing simulation results only).
 
     Methods:
         configure(agents, needs, social_utility)
@@ -165,7 +173,6 @@ class TrafoOperatorRole(Role):
         # event to indicate whether the new canon weights have been received
         self.new_canon_weights_received = asyncio.Event()
 
-        # TODO: add to commented code
         # the following attributes are created for storing simulation results
         # flag to indicate whether a congestion occurred (only store results if this is the case)
         self.scarcity_flag = False

@@ -55,8 +55,8 @@ class VotingAgent(Role):
         """
         :param k_values: canon-specific values determining the trade-off between self-interest
                         and canon of distributive justice
-        :param discount_factor: discount factor determining the weights attached to the current and
-                        previous voting rounds
+        :param gamma: degree to which narrow self-interest and justice-influenced self-interest are
+                    traded off against each other
         """
         super().__init__()
 
